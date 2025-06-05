@@ -1,3 +1,80 @@
+# 🚀 Vite + React Starter
+
+This is a React project bootstrapped with [Vite](https://vitejs.dev/), a fast frontend build tool.
+
+## 🧱 Requirements
+
+- Node.js (v16 or higher)
+- pnpm (or npm/yarn)
+
+---
+
+## 📦 Installation
+
+Install dependencies:
+
+```bash
+pnpm install
+
+```
+
+🧪 Development
+Start the development server:
+
+
+pnpm dev
+Runs locally at: http://localhost:5173
+
+🏗️ Build
+Build the project for production:
+
+
+pnpm build
+Output is located in the dist/ folder
+
+🔍 Preview
+Preview the production build locally:
+
+
+pnpm preview
+📁 Project Structure
+
+```
+src/
+├── App.jsx         # Main React component
+├── main.jsx        # Entry point for Vite
+└── assets/         # Static assets (images, etc.)
+```
+
+🔧 Customization Tips
+Add Tailwind CSS:
+
+
+pnpm add -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+Environment Variables:
+
+Create a .env file
+
+Prefix custom variables with VITE_ (e.g., VITE_API_URL)
+
+Proxy API Calls:
+Configure in vite.config.js:
+
+```
+server: {
+  proxy: {
+    "/api": {
+      target: "https://your-api.com",
+      changeOrigin: true,
+      rewrite: (path) => path.replace(/^\/api/, ""),
+    },
+  },
+}
+```
+
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
