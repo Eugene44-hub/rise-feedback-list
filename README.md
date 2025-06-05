@@ -72,6 +72,9 @@ server: {
   },
 }
 ```
+API Result after configuring vite
+
+<img width="658" alt="image" src="https://github.com/user-attachments/assets/eca2b470-0749-46d3-b4a5-6b266a5f3974" />
 
 
 
