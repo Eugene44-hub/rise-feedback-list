@@ -9,7 +9,6 @@ const useFeedback = () => {
   const [addingFeedback, setAddingFeedback] = useState(false);
   const [feedbacks, setFeedbacks] = useState<FeedbackPayloadType[]>([]);
 
-  console.log(import.meta.env.VITE_BASE_URL, "base url");
   const getFeedbacks = async () => {
     try {
       setFetchingFeedbacks(true);
@@ -35,8 +34,8 @@ const useFeedback = () => {
       onSuccess?.();
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
-      console.log(error?.message);
-      toast.error(error?.message);
+      console.error(error?.message);
+      toast.error("Failed to add feedback");
       onFailure?.();
     } finally {
       setAddingFeedback(false);
