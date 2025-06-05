@@ -1,8 +1,9 @@
 import type { FeedbackPayloadType } from "@/types";
+import API_URL from "./config";
 
 const addFeedback = async (payload: FeedbackPayloadType) => {
   try {
-    const response = await fetch("/feedback-api", {
+    const response = await fetch(API_URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -1,18 +1,13 @@
-const fetchFeedbacks = async () => {
-  const isDev = import.meta.env.DEV;
+import API_URL from "./config";
 
+const fetchFeedbacks = async () => {
   try {
-    const response = await fetch(
-      isDev
-        ? "https://rise-frontend-test-api.developer-a6a.workers.dev"
-        : "/feedback-api",
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const response = await fetch(API_URL, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
     const data = await response.json();
     console.log(data);
     return data;
