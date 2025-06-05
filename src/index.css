@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: 186, 100%, 24%;
+    --color-secondary: rgba(237, 255, 255, 1);
+    --color-tertiary: rgba(85, 91, 100, 1);
+    --border-primary-color: rgba(159, 220, 225, 1);
+    --border-secondary-color: rgba(234, 236, 240, 1);
+    --color-button-neutral: rgba(243, 244, 246, 1);
+
+  }
+}
+
+@font-face {
+  font-family: "TomatoGrotesk";
+  src:
+    local("Tomato Grotesk VF"),
+    url("../src/assets/fonts/Tomato Grotesk VF.woff2") format("woff"),
+    url("../src/assets/fonts/Tomato Grotesk VF.otf") format("opentype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Work Sans", sans-serif;
+
+}
+
+body {
+  background-color: rgba(248, 248, 248, 1);
+}
