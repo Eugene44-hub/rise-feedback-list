@@ -87,24 +87,6 @@ const FeedbackTab = () => {
     [feedbackTabKeys.OTHER]: othersFeedbacks,
   };
 
-  if (fetchingFeedbacks && !allFeedbacks?.length) {
-    return (
-      <div className="flex justify-center items-center h-[60vh]">
-        <div className="animate-spin rounded-full h-32 w-32 border-2 border-primary border-t-transparent " />
-      </div>
-    );
-  }
-
-  if (!allFeedbacks?.length && !fetchingFeedbacks) {
-    return (
-      <div className="flex justify-center items-center h-[60vh]">
-        <p className="text-center md:text-h1 text-h2 font-semibold font-tomato-grotesk">
-          No feedbacks found
-        </p>
-      </div>
-    );
-  }
-
   return (
     <section>
       <DefaultLayout>
@@ -134,14 +116,29 @@ const FeedbackTab = () => {
           </AddFeedbackModal>
         </div>
 
-        <div className="mt-[26px]">
-          {tabContents.map(
-            (item) =>
-              activeTab === item.key && (
-                <item.Component data={data[item.key]} key={item.key} />
-              )
-          )}
-        </div>
+        {fetchingFeedbacks && !allFeedbacks?.length && (
+          <div className="flex justify-center items-center h-[60vh]">
+            <div className="animate-spin rounded-full h-32 w-32 border-2 border-primary border-t-transparent " />
+          </div>
+        )}
+
+        {!allFeedbacks?.length && !fetchingFeedbacks && (
+          <div className="flex justify-center items-center h-[60vh]">
+            <p className="text-center md:text-h1 text-h2 font-semibold font-tomato-grotesk">
+              No feedbacks found
+            </p>
+          </div>
+        )}
+        {allFeedbacks?.length && !fetchingFeedbacks && (
+          <div className="mt-[26px]">
+            {tabContents.map(
+              (item) =>
+                activeTab === item.key && (
+                  <item.Component data={data[item.key]} key={item.key} />
+                )
+            )}
+          </div>
+        )}
       </DefaultLayout>
     </section>
   );
