@@ -24,8 +24,6 @@ const AvatarImage = ({
   const firstName = splittedName?.[0];
   const lastName = splittedName?.[1];
 
-  console.log(firstName, lastName?.[0], "name");
-
   return (
     <div
       className={cn(

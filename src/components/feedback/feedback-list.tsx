@@ -13,6 +13,7 @@ const FeedbackList = ({ data }: { data: FeedbackPayloadType[] }) => {
   const nextPage = () => setCurrentPage(currentPage + 1);
   const prevPage = () => setCurrentPage(currentPage - 1);
 
+  const totalPages = Math.ceil(data.length / itemsPerPage);
   return (
     <div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
@@ -20,13 +21,15 @@ const FeedbackList = ({ data }: { data: FeedbackPayloadType[] }) => {
           <FeedbackCard key={feedback?.email} {...feedback} />
         ))}
       </div>
-      <Pagination
-        itemsPerPage={itemsPerPage}
-        totalItems={data.length}
-        currentPage={currentPage}
-        nextPage={nextPage}
-        prevPage={prevPage}
-      />
+      {totalPages > 1 && (
+        <Pagination
+          itemsPerPage={itemsPerPage}
+          totalItems={data.length}
+          currentPage={currentPage}
+          nextPage={nextPage}
+          prevPage={prevPage}
+        />
+      )}
     </div>
   );
 };

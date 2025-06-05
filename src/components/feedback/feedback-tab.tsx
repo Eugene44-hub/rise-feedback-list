@@ -87,10 +87,18 @@ const FeedbackTab = () => {
     [feedbackTabKeys.OTHER]: othersFeedbacks,
   };
 
-  if (fetchingFeedbacks) {
+  if (fetchingFeedbacks && !allFeedbacks?.length) {
     return (
       <div className="flex justify-center items-center h-[60vh]">
         <div className="animate-spin rounded-full h-32 w-32 border-2 border-primary border-t-transparent " />
+      </div>
+    );
+  }
+
+  if (!allFeedbacks?.length && !fetchingFeedbacks) {
+    return (
+      <div className="flex justify-center items-center h-[60vh]">
+        <p className="text-center text-lg">No feedbacks found</p>
       </div>
     );
   }

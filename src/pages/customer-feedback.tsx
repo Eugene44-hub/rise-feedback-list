@@ -5,6 +5,7 @@ import { Toaster } from "sonner";
 // import Pagination from "@/components/pagination";
 
 const CustomerFeedBack = () => {
+  console.log(import.meta.env.DEV, "import.meta.env");
   return (
     <article>
       <Topbar />

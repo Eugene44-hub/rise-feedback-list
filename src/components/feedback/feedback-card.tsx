@@ -23,7 +23,6 @@ const FeedbackCard = (props: FeedbackPayloadType) => {
 
   const randomColor =
     randomColors[Math.floor(Math.random() * randomColors.length)];
-  console.log(Math.floor(Math.random() * randomColors.length), "randomColor");
 
   return (
     <motion.div
