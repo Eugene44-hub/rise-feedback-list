@@ -129,7 +129,7 @@ const FeedbackTab = () => {
             </p>
           </div>
         )}
-        {allFeedbacks?.length && !fetchingFeedbacks && (
+        {!!allFeedbacks?.length && !fetchingFeedbacks && (
           <div className="mt-[26px]">
             {tabContents.map(
               (item) =>
