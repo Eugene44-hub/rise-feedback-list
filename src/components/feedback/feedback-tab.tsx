@@ -98,7 +98,9 @@ const FeedbackTab = () => {
   if (!allFeedbacks?.length && !fetchingFeedbacks) {
     return (
       <div className="flex justify-center items-center h-[60vh]">
-        <p className="text-center text-lg">No feedbacks found</p>
+        <p className="text-center md:text-h1 text-h2 font-semibold font-tomato-grotesk">
+          No feedbacks found
+        </p>
       </div>
     );
   }
